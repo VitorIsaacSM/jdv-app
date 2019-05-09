@@ -1,0 +1,16 @@
+li {
+    display: inline-block;
+    margin: 0.1%;
+}
+
+.input {
+    text-align: center;
+    padding: 10px
+}
+
+p {
+    text-align: center;
+    color: rgb(109, 109, 109);
+    font-size: 200%;
+    font-family: sans-serif;
+}

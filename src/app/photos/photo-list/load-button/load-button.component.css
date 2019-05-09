@@ -1,0 +1,20 @@
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 4px;
+}
+button {
+    background-color: rgb(35, 60, 141);
+    color: white;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 140%;
+    color: gray;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}

@@ -1,0 +1,7 @@
+<div *ngIf="hasMore; else elsevar ">
+  <button>Load more</button>
+</div>
+
+<ng-template class="ng-t" #elsevar>
+  <h1>There's nothing to load anymore</h1>
+</ng-template>

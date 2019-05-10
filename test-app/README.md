@@ -1,2 +1,1 @@
-# angular
-some angular projects
+Angular course project

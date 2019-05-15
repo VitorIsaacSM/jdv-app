@@ -1,0 +1,4 @@
+<app-header></app-header>
+<app-to-do-list (passTodoUp)="checkBox($event)" [todos]="todos"></app-to-do-list>
+<app-refresh-todos (update)="updateList()"></app-refresh-todos>
+<app-todo-form></app-todo-form>

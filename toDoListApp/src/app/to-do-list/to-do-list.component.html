@@ -1,0 +1,16 @@
+
+<div class="container border">
+  <div class="myBar">
+    <h2>
+      Tarefas
+    </h2>
+  </div>
+  <div *ngIf="todos.length > 0"class="myList">
+    <div *ngFor="let todo of todos">
+        <app-to-do (boxClick)="updateList($event)" [todo]="todo"></app-to-do>
+    </div>
+  </div>
+  <div *ngIf="todos.length == 0"class="noTasks">
+     <h2>Nao há tarefas...</h2>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+.container {
+    background-color: whitesmoke;
+    border-style: solid;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    max-width: 1200px;
+    border-width: 1px;
+    padding: 10px;
+    min-height: 100px;
+    border-radius: 5px;
+}
+
+.myCheckbox{
+    flex-grow: 0;
+
+}
+
+.media{
+    align-items: center;
+}

@@ -1,0 +1,17 @@
+
+
+.myBar{
+    padding: 10px;
+    display: flex;
+    background-color: cornflowerblue;
+    border-radius: 3px;
+    color: white;
+    margin-top: 10px;
+}
+
+
+.noTasks{
+    text-align: center;
+    color: gray;
+    padding: 2rem;
+}

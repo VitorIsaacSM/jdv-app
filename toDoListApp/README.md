@@ -5,16 +5,13 @@ A simple app made Angular with that allows you to manage your tasks, add new tas
 Not finished yet
 
 # Running the App
+```
+npm install
 
-"npm install"
+ng build --aot
 
-then
-
-"ng build --aot"
-
-then
-
-"node server.js"
+node server.js
+```
 
 
 

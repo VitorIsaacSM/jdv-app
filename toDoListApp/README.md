@@ -12,7 +12,6 @@ ng build --aot
 
 node server.js
 ```
-
-
+then just enter localhost:3000
 
 

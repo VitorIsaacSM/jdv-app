@@ -1,4 +1,7 @@
 .container {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
     background-color: whitesmoke;
     border-style: solid;
     margin-top: 10px;
@@ -11,10 +14,57 @@
 }
 
 .myCheckbox{
+    flex: 0;
+    margin-right: 25px;
     flex-grow: 0;
-
+    transform: scale(2);
 }
 
 .media{
+    
+    padding: 10px;
+    max-width: 100%;
+    min-width: 100%;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    word-wrap: break-word;
 }
+
+
+.media-body{
+    flex: 0;
+    max-width: 50rem;
+    word-wrap: break-word;
+}
+
+
+@media (max-width: 1200px) 
+{
+  .media-body 
+   {
+    max-width: 30rem;
+   }
+}
+
+@media (max-width: 800px) 
+{
+  .media-body 
+   {
+    max-width: 20rem;
+   }
+}
+
+
+@media (max-width: 600px) 
+{
+  .media-body 
+   {
+    max-width: 10rem;
+   }
+}
+
+.Done {
+    text-decoration: line-through;
+}
+

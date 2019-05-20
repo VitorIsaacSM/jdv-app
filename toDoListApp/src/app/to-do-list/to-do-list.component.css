@@ -4,9 +4,7 @@
     padding: 10px;
     display: flex;
     background-color: cornflowerblue;
-    border-radius: 3px;
     color: white;
-    margin-top: 10px;
 }
 
 
@@ -14,4 +12,12 @@
     text-align: center;
     color: gray;
     padding: 2rem;
+}
+
+.container{
+    padding: 0;
+}
+
+.myList{
+    padding: 10px;
 }

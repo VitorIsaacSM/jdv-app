@@ -1,0 +1,32 @@
+
+.container{
+    margin-top: 30px;
+    padding: 0;
+}
+
+.box{
+    padding: 18px;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+    
+}
+
+button{
+    font-size: 200%;
+    width: 100%;
+    min-height: 80px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+small{
+    text-align: left;
+}
+
+@media(max-width: 600px){
+    .container{
+        margin-top: 0px;
+    }
+}

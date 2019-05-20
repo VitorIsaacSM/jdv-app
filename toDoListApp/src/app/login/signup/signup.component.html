@@ -1,0 +1,43 @@
+<div class="container border boxShadow">
+
+  <div class="myBar myTextShadow">
+      <h2>
+        Registre-se Agora!
+      </h2>
+    </div>
+  <form [formGroup]="loginForm" class="box" (ngSubmit)="addUser()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" maxlength="40" formControlName="email"  name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@example">
+      </div>
+      <small *ngIf="loginForm.get('email').touched && loginForm.get('email').errors?.required" class="text-danger d-block mt-2">
+        Este campo é obrigatório
+      </small>
+      <small *ngIf="loginForm.get('email').touched && loginForm.get('email').errors?.email" class="text-danger d-block mt-2">
+        Email invalido
+      </small>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" maxlength="20" formControlName="username"  name="username" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Username">
+      </div>
+      <small *ngIf="loginForm.get('username').touched && loginForm.get('username').errors?.required" class="text-danger d-block mt-2">
+        Este campo é obrigatório
+      </small>
+      <small *ngIf="invalidUsername && loginForm.get('username').touched" class="text-danger d-block mt-2">
+        Username "{{invalidUsername}}" invalido ou já existe
+      </small>
+      <div class="form-group">
+        <label for="paswd">Password</label>
+        <input type="password" maxlength="20" formControlName="password"  name="password" class="form-control" id="paswd" aria-describedby="emailHelp" placeholder="password">
+      </div>
+      <small *ngIf="loginForm.get('password').touched && loginForm.get('password').errors?.required" class="text-danger d-block mt-2">
+        Este campo é obrigatório
+      </small>
+      <p>Já tem uma conta? <a [routerLink]="['','login']">Fazer login</a></p>
+      <button
+        [class.disabled]="loginForm.invalid"
+        [disabled]="loginForm.invalid" 
+        type="submit"
+        class="btn btn-primary btn-block myTextShadow boxShadow">Registrar-se</button>
+  </form>
+</div>

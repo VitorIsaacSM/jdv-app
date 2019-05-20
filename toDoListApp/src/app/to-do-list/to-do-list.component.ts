@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { toDo } from '../to-do/toDo';
 import { GetTodosService } from '../services/get-todos.service';
 
@@ -15,8 +15,7 @@ export class ToDoListComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    
+  ngOnInit(){
   }
 
   updateList(todo : toDo){

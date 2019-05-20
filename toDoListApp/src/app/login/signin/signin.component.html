@@ -1,0 +1,33 @@
+<div class="container border boxShadow">
+
+  <div class="myBar myTextShadow">
+      <h2>
+        Faça Login para acessar suas tarefas!
+      </h2>
+    </div>
+  <form [formGroup]="loginForm" class="box" (ngSubmit)="login()">
+      <div class="form-group">
+        <label for="user">Username</label>
+        <input type="text" maxlength="20" formControlName="username"  name="username" class="form-control" id="user" aria-describedby="emailHelp" placeholder="Username">
+      </div>
+      <small *ngIf="loginForm.get('username').touched && loginForm.get('username').errors?.required" class="text-danger d-block mt-2">
+        Este campo é obrigatório
+      </small>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" maxlength="20" formControlName="password"  name="password" class="form-control" id="password" aria-describedby="emailHelp" placeholder="password">
+      </div>
+      <small *ngIf="loginForm.get('password').touched && loginForm.get('password').errors?.required" class="text-danger d-block mt-2">
+        Este campo é obrigatório
+      </small>
+      <small *ngIf="invalid" class="text-danger d-block mt-2">
+        Username ou senha invalidos, por favor tente novamente
+      </small>
+      <p>Não tem uma conta ainda? <a [routerLink]="['','register']">Cadastre-se agora</a></p>
+      <button
+        [class.disabled]="loginForm.invalid"
+        [disabled]="loginForm.invalid" 
+        type="submit"
+        class="btn btn-primary btn-block myTextShadow boxShadow">Login</button>
+  </form>
+</div>

@@ -1,6 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { toDo } from '../to-do/toDo';
-import { GetTodosService } from '../services/get-todos.service';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-refresh-todos',
@@ -11,14 +9,24 @@ export class RefreshTodosComponent implements OnInit {
 
   @Output() update = new EventEmitter<string>();
   
-  constructor(private service: GetTodosService) { }
+  @Input() todosLength: number;
+  
+
+  constructor() { }
 
   ngOnInit() {
     
   }
 
   refresh(){
-    this.update.emit('atualiza ae meu parcero');
+    this.update.emit('update');
+  }
+
+  eraseAll(){
+    
+
+    this.update.emit('eraseAll');
+    
   }
 
 }

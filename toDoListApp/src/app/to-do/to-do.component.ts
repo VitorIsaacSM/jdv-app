@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { toDo } from './toDo';
+import { TodoFormComponent } from '../todo-form/todo-form.component';
 
 @Component({
   selector: 'app-to-do',
@@ -19,6 +20,7 @@ export class ToDoComponent implements OnInit {
 
   log(){
     setTimeout(() => {
+      this.todo.isDone = !this.todo.isDone;
       this.boxClick.emit(this.todo);
     }, 100);
 

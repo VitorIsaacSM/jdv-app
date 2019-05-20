@@ -1,12 +1,12 @@
 
-<div class="container border">
-  <div class="myBar">
+<div class="container border boxShadow">
+  <div class="myBar myTextShadow">
     <h2>
       Tarefas
     </h2>
   </div>
   <div *ngIf="todos.length > 0"class="myList">
-    <div *ngFor="let todo of todos">
+    <div *ngFor="let todo of todos" >
         <app-to-do (boxClick)="updateList($event)" [todo]="todo"></app-to-do>
     </div>
   </div>

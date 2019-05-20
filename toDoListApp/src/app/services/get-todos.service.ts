@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { toDo } from '../to-do/toDo';
 
-let URL = 'http://localhost:3000';
-let URL2 = 'https://angular-todo-list-app.herokuapp.com';
+let URL2 = 'http://localhost:3000';
+let URL = 'https://angular-todo-list-app.herokuapp.com';
 
 @Injectable({
   providedIn: 'root'

@@ -1,0 +1,53 @@
+<div class="myMenu">
+  <div class="myMenuHeader">{{TextoMenuHeader}}</div>
+  <div *ngIf="estadoMenu == 0">
+    <div class="myButtonList">
+      <div>
+        <button type="button" class="btn btn-lg btn-block">Buscar Jogo</button>
+      </div>
+      <div>
+        <button (click)="iniciaJogoOffline()" type="button" class="btn btn-lg btn-block">Jogar com Bot</button>
+      </div>
+      <div class="menuBuscaAmigo">
+        <div class="idInput">
+          <input type="text" #idInput class="form-control" placeholder="Id do jogador" maxlength="7" minlength="7">
+        </div>
+        <div class="btnSpread">
+          <button type="button" class="btn btn-lg btn-block a" (click)="buscaPorId(idInput.value)"> Buscar </button>
+        </div>
+      </div>                                     
+    </div>
+  </div>
+  <div *ngIf="estadoMenu == 4">
+    <ul class="list-unstyled menu4">
+      <li>
+        {{MenuMessages.tipoMessage}}
+      </li>
+      <li>
+        {{MenuMessages.seuSimboloMessage}}
+        <fa [name]="getFaName()"></fa>
+      </li>
+      <li>
+        {{MenuMessages.seuTurnoMessage}}
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="estadoMenu == 10">
+    <ul class="list-unstyled menu4">
+      <li>
+        {{MenuMessages.seuTurnoMessage}}
+      </li>
+    </ul>
+      <div class="myButtonList">
+        <div>
+          <button (click)="backToStartMenu()" type="button" class="btn btn-lg btn-block">Menu inicial</button>
+        </div>
+      
+      
+        <div>
+          <button (click)="iniciaJogoOffline()" type="button" class="btn btn-lg btn-block">Jogar Novamente</button>
+        </div>
+      </div>     
+  </div>    
+</div>

@@ -1,0 +1,90 @@
+$cor-fundo : #563d7c;
+$cor-texto : rgb(255, 255, 255);
+$cor-fundo-menu: rgba(216, 211, 211, 0.719);
+$sombraTexto: 1px 1px 5px black;
+
+.myMenu{
+    min-width: 300px;
+    width: 32vmax;
+    height: auto;
+    background-color: $cor-fundo-menu;
+    border-radius: 2px;
+    font-family: monospace;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.myButtonList{
+    padding: 10px;
+    padding-bottom: 3px;
+}
+
+.menuBuscaAmigo{
+    margin-bottom: 7px;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.btnSpread{
+    flex-grow: 2;
+    margin-left: 5px;
+    margin-bottom: 0;
+}
+
+.idInput{
+    height: 100%;
+    width: 60%;
+}
+
+.btn{
+    padding: 0;
+    margin-bottom: 7px;
+    height: 45px;
+    border-radius: 4px;
+    border-color: rgba(124, 118, 118, 0.562);
+    font-size: 1.5rem;
+    line-height: 50%;
+    text-shadow: $sombraTexto;
+    color: $cor-texto;
+    text-shadow: $sombraTexto;
+    background: rgb(250,198,149);
+    background: -moz-linear-gradient(top,  rgba(250,198,149,1) 0%, rgba(249,178,112,1) 0%, rgba(244,152,70,1) 47%, rgba(237,125,21,1) 100%);
+    background: -webkit-linear-gradient(top,  rgba(250,198,149,1) 0%,rgba(249,178,112,1) 0%,rgba(244,152,70,1) 47%,rgba(237,125,21,1) 100%);
+    background: linear-gradient(to bottom,  rgba(250,198,149,1) 0%,rgba(249,178,112,1) 0%,rgba(244,152,70,1) 47%,rgba(237,125,21,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fac695', endColorstr='#ed7d15',GradientType=0 );
+
+}
+
+.myAltButton{
+    background: rgb(242,141,41);
+    background: -moz-linear-gradient(top, rgba(242,141,41,1) 0%, rgba(165,61,157,1) 100%);
+    background: -webkit-linear-gradient(top, rgba(242,141,41,1) 0%,rgba(165,61,157,1) 100%);
+    background: linear-gradient(to bottom, rgba(242,141,41,1) 0%,rgba(165,61,157,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f28d29', endColorstr='#a53d9d',GradientType=0 );
+}
+
+.myMenuHeader{
+    border-radius: inherit;
+    width: 100%;
+    min-height: 35px;
+    background-color: $cor-fundo;
+    font-size: 36px;
+    text-align: center;
+    color: $cor-texto;
+    text-shadow: $sombraTexto;
+    font-weight: 600;
+    font-size: 35px;
+    font-family: monospace;
+}
+
+.a{
+    margin-bottom: 0;
+}
+
+.menu4{
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 50px;
+}

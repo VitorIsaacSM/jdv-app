@@ -1,0 +1,86 @@
+.lista{
+    width: 100%;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.item{
+    background-color: lightgray;
+    text-align: center;
+    border-radius: 10px;
+    margin: 10px;
+    
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-section{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.main-section2{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    width: 100%;
+    height: 80%;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.inputs{
+    padding-left: 30%;
+    padding-right: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputs2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 150% ;
+}
+
+
+.form-control{
+    margin: 20px;
+    width: 60%;
+}
+
+.product-form{
+    width: 80%;
+    background-color: lightgray;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+h2{
+    margin: 20px;
+    font-family: sans-serif;
+    font-size: 200%;
+    font-weight: 500;
+}
+
+.descTest{
+    font-size: 200%;
+}
+

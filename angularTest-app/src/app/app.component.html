@@ -1,0 +1,48 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="main">
+  <h1>{{title}}</h1>
+  <div class="main-section">
+    
+    <ul *ngIf="data.length > 0" class="lista">
+        <li *ngFor="let object of data" class="item">
+          <h2>{{object.nome}}</h2>
+          <h2>{{object.idade}}</h2>
+          <h2>{{object.emprego}}</h2>
+          <h2>{{object.formacao}}</h2>
+        </li>
+    </ul>
+
+    <h2 *ngIf="data.length <= 0" >Nenhum dado encontrado no servidor</h2>
+    </div>
+  <div class="main-section2">
+  <form class="product-form" (ngSubmit)="addUser()">
+    <h2>Adicionar novo usuario</h2>
+    <div class="inputs2">
+
+      <label for="nome" class="descText">Nome</label>
+      <input type="text" class="form-control" id="nome" aria-describedby="basic-addon3" name="nome" [(ngModel)]="objNome">
+      
+      <label for="idade">Idade</label>
+      <input type="text" class="form-control" id="idade" aria-describedby="basic-addon3" name="idade" [(ngModel)]="objIdade">
+      
+      <label for="emprego">Emprego</label>
+      <input type="text" class="form-control" id="emprego" aria-describedby="basic-addon3" name="emprego" [(ngModel)]="objEmprego">
+ 
+      <label for="formacao">Formação</label>
+      <input type="text" class="form-control" id="formacao" aria-describedby="basic-addon3" name="formacao" [(ngModel)]="objFormacao">
+     
+
+      <button class="btn btn-primary" type="submit" (click)="evento()">adicionar pessoa</button>
+    </div>
+  </form>
+  </div>
+
+  <div class="main-section">
+    <form class="product-form" (ngSubmit)="resetData()">
+      <h2>Resetar a Lista</h2>
+      <div class="inputs">
+        <button class="btn btn-primary btn-block" type="submit" (click)="evento()">Reset</button>
+      </div>
+    </form>
+    </div>
+</div>

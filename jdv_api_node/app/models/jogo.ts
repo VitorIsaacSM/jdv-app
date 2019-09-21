@@ -3,8 +3,8 @@ export class Jogo {
     estadoDoJogo = 0;
 	numeroDeJogadas = 0;
 	tipo = "4";
-	JogadorTurno = false;
-	JogadorSimbolo = false;
+	jogadorTurno = false;
+	jogadorSimbolo = false;
     playerId: string;
 	jogadorValue: number;
 	serverValue: number;
@@ -16,14 +16,14 @@ export class Jogo {
         this.playerId = id;
 		
 		if(playerValue == 1) {
-			this.JogadorSimbolo = true;
-			this.JogadorTurno = true;
+			this.jogadorSimbolo = true;
+			this.jogadorTurno = true;
 			this.jogadorValue = 1;
 			this.serverValue = -1;	
 		}
 		else {
-			this.JogadorTurno = false;
-			this.JogadorSimbolo = false;
+			this.jogadorTurno = false;
+			this.jogadorSimbolo = false;
 			this.jogadorValue = -1;
 			this.serverValue = 1;
 		}
@@ -122,7 +122,7 @@ export class Jogo {
 
     public playerJogada(i: number, j: number): void {
 		this.jogo[i][j] = this.jogadorValue;
-		this.JogadorTurno = !this.JogadorTurno;
+		this.jogadorTurno = !this.jogadorTurno;
 		this.numeroDeJogadas++;
 		this.estadoDoJogo = this.checaEstado(this.jogo, true, this.numeroDeJogadas);
 	}
@@ -133,7 +133,7 @@ export class Jogo {
 			for(let j = 0; j < 3; j++) {
 				if(this.jogo[i][j] == 0) {
 					this.jogo[i][j] = this.serverValue;
-					this.JogadorTurno = !this.JogadorTurno;
+					this.jogadorTurno = !this.jogadorTurno;
 					this.numeroDeJogadas++;
 					this.estadoDoJogo = this.checaEstado(this.jogo, true, this.numeroDeJogadas);
 					return;
@@ -150,7 +150,7 @@ export class Jogo {
 		if(this.numeroDeJogadas == 3) {
 			if(this.checkForTrickOnRound3()){
 				this.jogo[0][1] = this.serverValue;
-				this.JogadorTurno = !this.JogadorTurno;
+				this.jogadorTurno = !this.jogadorTurno;
 				this.numeroDeJogadas++;
 				return;
 			}
@@ -185,7 +185,7 @@ export class Jogo {
 		
         console.log("escolhi uma opcao com o valor de" + possibilidades[melhorJogadaIndex]);
 		this.jogo[this.mapper[melhorJogadaIndex][0]][this.mapper[melhorJogadaIndex][1]] = this.serverValue;
-		this.JogadorTurno = !this.JogadorTurno;
+		this.jogadorTurno = !this.jogadorTurno;
 		this.numeroDeJogadas++;
 		this.estadoDoJogo = this.checaEstado(this.jogo, true, this.numeroDeJogadas);
 		return;

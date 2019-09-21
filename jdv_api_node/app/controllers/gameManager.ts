@@ -1,7 +1,7 @@
 import { Coordenada } from './../models/Coordenada';
 import { Jogo } from './../models/jogo';
 
-const listaJogos: Jogo[] = [];
+let listaJogos: Jogo[] = [];
 
 export const criaNovoJogo = (id: string): Jogo  => {
 		
@@ -47,7 +47,8 @@ export const fazJogadaBot = (id: string) => {
 export const deletaJogoDoUsuario = (id: string) => {
     const jogo = getJogoById(id)
     if(!!jogo) {
-        listaJogos.indexOf(jogo);
+        listaJogos = listaJogos.filter(j => j != jogo);
+        console.log(listaJogos);
         return true;
     }
     

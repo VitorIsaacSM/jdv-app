@@ -11,7 +11,7 @@ botRouter.post('/start', (req: express.Request, res:express.Response) => {
 });
 
 botRouter.post('/:id', (req: express.Request, res:express.Response) => {
-    const coord: Coordenada = req.body.coord;
+    const coord: Coordenada = req.body;
     const id = req.params.id;
     console.log('Usuario de id = ' + id + ' faz jogada');
     return res.json(gameController.fazJogada(id, coord));

@@ -3,7 +3,7 @@ import { Jogo } from './../models/jogo';
 
 let listaJogos: Jogo[] = [];
 
-export const criaNovoJogo = (id: string): Jogo  => {
+export const criaNovoJogo = (id: string, dificuldade: number): Jogo  => {
 		
     let userSymbol = 1;
     
@@ -11,7 +11,7 @@ export const criaNovoJogo = (id: string): Jogo  => {
         userSymbol = -1;
     }
     
-    let newJogo = new Jogo(id, userSymbol); 
+    let newJogo = new Jogo(id, userSymbol, dificuldade); 
     
     listaJogos.push(newJogo);
     
@@ -36,8 +36,12 @@ export const fazJogadaBot = (id: string) => {
     
     for(let i = 0; i < listaJogos.length; i++) {
         if(listaJogos[i].playerId == id) {
-            meuJogo = listaJogos[i]
-            meuJogo.serverJogada2();
+            meuJogo = listaJogos[i];
+            if(meuJogo.dificuldade == 0) {
+                meuJogo.serverJogadaSimples();
+            } else {
+                meuJogo.serverJogada2();
+            }
             return meuJogo;
         }
     }

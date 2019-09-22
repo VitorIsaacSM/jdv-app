@@ -6,8 +6,9 @@ import * as gameController from '../controllers/gameManager';
 export const botRouter = express.Router();
 
 botRouter.post('/start', (req: express.Request, res:express.Response) => {
-    const user: Usuario = req.body;
-    return res.json(gameController.criaNovoJogo(user.id));
+    const user: Usuario = req.body.user;
+    const dificuldade: number = req.body.dificuldade;
+    return res.json(gameController.criaNovoJogo(user.id, dificuldade));
 });
 
 botRouter.post('/:id', (req: express.Request, res:express.Response) => {

@@ -10,10 +10,12 @@ export class Jogo {
 	serverValue: number;
 	jogo: number[][] = this.getEmptyBoard();
 	winningSquares: number[][] = this.getEmptyBoard();
-    mapper = MAPPER;
+	mapper = MAPPER;
+	dificuldade: number
     
-    constructor(id: string, playerValue: number) {
-        this.playerId = id;
+    constructor(id: string, playerValue: number, dificuldade: number) {
+		this.playerId = id;
+		this.dificuldade = dificuldade;
 		
 		if(playerValue == 1) {
 			this.jogadorSimbolo = true;
@@ -129,25 +131,30 @@ export class Jogo {
     
     // faz o bot jogar no proximo quadrando disponivel
 	public serverJogadaSimples(): void {
-		for(let i = 0; i < 3; i++) {
-			for(let j = 0; j < 3; j++) {
-				if(this.jogo[i][j] == 0) {
-					this.jogo[i][j] = this.serverValue;
-					this.jogadorTurno = !this.jogadorTurno;
-					this.numeroDeJogadas++;
-					this.estadoDoJogo = this.checaEstado(this.jogo, true, this.numeroDeJogadas);
-					return;
+		if((Math.round(Math.random()) >= 0.65)) {
+			for(let i = 0; i < 3; i++) {
+				for(let j = 0; j < 3; j++) {
+					if(this.jogo[i][j] == 0) {
+						this.jogo[i][j] = this.serverValue;
+						this.jogadorTurno = !this.jogadorTurno;
+						this.numeroDeJogadas++;
+						this.estadoDoJogo = this.checaEstado(this.jogo, true, this.numeroDeJogadas);
+						return;
+					}
 				}
 			}
-        }
-    
+		}
+		else {
+			return this.serverJogada2();
+		}
         throw new Error("Error: Jogada invalida do Bot")
     }
 
     // faz a melhor jogada possivel para o bot
     public serverJogada2(): void {
 		
-		if(this.numeroDeJogadas == 3) {
+		if(this.numeroDeJogadas == 3 && this.dificuldade == 2) {
+			console.log('checked for the trick');
 			if(this.checkForTrickOnRound3()){
 				this.jogo[0][1] = this.serverValue;
 				this.jogadorTurno = !this.jogadorTurno;

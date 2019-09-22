@@ -1,0 +1,29 @@
+$cor-fundo : #563d7c;
+$cor-texto : rgb(253, 253, 253);
+$margin-top-bottom: 1px;
+$margin-left-right: 10px;
+$sombraTexto: 1px 1px 3px  black;
+
+.myHeader{
+
+    text-shadow: $sombraTexto;
+    background-color: $cor-fundo;
+}
+
+ul{
+    margin: 0;
+    min-height: 35px;
+    max-height: auto;
+    
+}
+
+.myItem{
+    font-weight: 600;
+    font-size: 30px;
+    font-family: monospace;
+    color : $cor-texto;
+    margin-top: $margin-top-bottom;
+    margin-bottom: $margin-top-bottom;
+    margin-left: $margin-left-right;
+    margin-right: $margin-left-right;
+}

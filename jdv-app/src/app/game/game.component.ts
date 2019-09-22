@@ -2,11 +2,9 @@ import { ComponentCanDeactivate } from './../leave.guard';
 import { GameGeneralService } from './../services/game-general.service';
 import { GameStatus } from './gameStatus';
 import { JogoOfflineService } from './../services/jogo-offline.service';
-import { Component, OnInit, OnDestroy, HostListener, ViewChild, ElementRef } from '@angular/core';
-import { Square } from './Square';
+import { Component, OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { GetIdService } from '../services/get-id.service';
 import { Observable } from 'rxjs';
-import { i18nEnd } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-game',
@@ -41,7 +39,6 @@ export class GameComponent implements OnInit, ComponentCanDeactivate {
       this.currentStatus = estado;
       if((this.disponivelParaStartarJogo) && estado.tipo != "0"){
         if(estado.jogadorTurno){
-          console.log('to aqui');
           this.startGame();
         }
         else {
@@ -85,6 +82,7 @@ export class GameComponent implements OnInit, ComponentCanDeactivate {
         console.log(newStatus);
         this.updateGame();
         if(this.currentStatus.estadoDoJogo == 0){
+          console.log('chamei no apply');
           this.chamaJogadaOponente();
         }
         else{
@@ -155,9 +153,6 @@ export class GameComponent implements OnInit, ComponentCanDeactivate {
 
   @HostListener('window:beforeunload')
   canDeactivate(): Observable<boolean> | boolean {
-    // insert logic to check if there are pending changes here;
-    // returning true will navigate without confirmation
-    // returning false will show a confirm dialog before navigating away
 
     let retorno = false;
     console.log('destruino');

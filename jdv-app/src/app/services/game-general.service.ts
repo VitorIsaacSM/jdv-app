@@ -18,7 +18,8 @@ export class GameGeneralService {
     jogo: [['0','0','0'],['0','0','0'],['0','0','0']],
     winningSquares: [],
     playerId: "-1",
-    jogadorValue: 0
+    jogadorValue: 0,
+    dificuldade: 0
   };
 
   private statusSource = new BehaviorSubject<GameStatus>(this.initialStatus);

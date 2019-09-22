@@ -14,9 +14,9 @@ export class JogoOfflineService {
 
   constructor(private http: HttpClient) { }
   
-  iniciaJogo(id: string){
+  iniciaJogo(id: string, dificuldade: number){
     let session = window.localStorage.getItem('session');
-    return this.http.post('http://localhost:8080/jdv/api/offline/start', {id : id, session : session});
+    return this.http.post('http://localhost:8080/jdv/api/offline/start', {user:{id : id, session : session}, dificuldade: dificuldade});
   }
 
   realizaJogada(id:string, x:string, y:string){
@@ -29,6 +29,6 @@ export class JogoOfflineService {
   }
 
   destroiJogo(id: string){
-    return this.http.post('http://localhost:8080/jdv/api/offline/delete/'+id, {});
+    return this.http.delete('http://localhost:8080/jdv/api/offline/delete/'+id, {});
   }
 }

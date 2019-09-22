@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { GameComponent } from './game/game.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { DestroyGame } from './leave.guard';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DestroyGame } from './leave.guard';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    FormsModule
   ],
   providers: [DestroyGame],
   bootstrap: [AppComponent]

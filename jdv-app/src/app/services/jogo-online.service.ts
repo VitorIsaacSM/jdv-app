@@ -14,11 +14,6 @@ export class JogoOnlineService {
 
   constructor(private http: HttpClient) { }
 
-  buscaPorId(seuId: string, oponenteId: string){
-    let session = window.localStorage.getItem('session');
-    return this.http.post('http://localhost:8080/jdv/api/online/search/'+oponenteId, {id : seuId, session : session});
-  }
-
   realizaJogada(id:string, x:string, y:string){
     console.log(id);
     return this.http.post('http://localhost:8080/jdv/api/online/'+id, {x : x, y : y});

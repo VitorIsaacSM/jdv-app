@@ -39,10 +39,17 @@ $squareColor: rgb(226, 217, 217);
     
 }
 
+.times {
+    color: rgba(238, 148, 13, 0.904);
+}
+
+.ban {
+    color: rgb(98, 0, 255);
+}
+
 fa{ 
     display: flex;
     pointer-events: none;
-    color: rgba(238, 148, 13, 0.904);
     text-shadow: 2px 2px 7px black;
 }
 
@@ -52,7 +59,7 @@ fa{
 
 .myDisponivel:hover{
     transition-property: all ;
-    transition-duration: .5s ;
+    transition-duration: .2s ;
     opacity: 0.5;
 }
 

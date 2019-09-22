@@ -1,11 +1,83 @@
 <div class="myGame" [ngClass]="estado? 'ativado' : 'desativado'">
-  <div class="ax"><div #00 id="00" [class.winningSquare]="currentStatus.estadoDoJogo && currentStatus.winningSquares[0][0]" (click)="squareClick($event)" class="mySquare" [class.myDisponivel]="estado && !disponivelParaStartarJogo && getSquareMarcado(0,0)"><fa #00a name="{{table[0][0]}}"></fa></div></div>
-  <div class="bx"><div #01 id="01" [class.winningSquare]="currentStatus.estadoDoJogo && currentStatus.winningSquares[0][1]" (click)="squareClick($event)" class="mySquare" [class.myDisponivel]="estado && !disponivelParaStartarJogo && getSquareMarcado(0,1)"><fa #01a name="{{table[0][1]}}"></fa></div></div>
-  <div class="cx"><div #02 id="02" [class.winningSquare]="currentStatus.estadoDoJogo && currentStatus.winningSquares[0][2]" (click)="squareClick($event)" class="mySquare" [class.myDisponivel]="estado && !disponivelParaStartarJogo && getSquareMarcado(0,2)"><fa #02a name="{{table[0][2]}}"></fa></div></div>
-  <div class="ay"><div #10 id="10" [class.winningSquare]="currentStatus.estadoDoJogo && currentStatus.winningSquares[1][0]" (click)="squareClick($event)" class="mySquare" [class.myDisponivel]="estado && !disponivelParaStartarJogo && getSquareMarcado(1,0)"><fa #10a name="{{table[1][0]}}"></fa></div></div>
-  <div class="by"><div #11 id="11" [class.winningSquare]="currentStatus.estadoDoJogo && currentStatus.winningSquares[1][1]" (click)="squareClick($event)" class="mySquare" [class.myDisponivel]="estado && !disponivelParaStartarJogo && getSquareMarcado(1,1)"><fa #11a name="{{table[1][1]}}"></fa></div></div>
-  <div class="cy"><div #12 id="12" [class.winningSquare]="currentStatus.estadoDoJogo && currentStatus.winningSquares[1][2]" (click)="squareClick($event)" class="mySquare" [class.myDisponivel]="estado && !disponivelParaStartarJogo && getSquareMarcado(1,2)"><fa #12a name="{{table[1][2]}}"></fa></div></div>
-  <div class="az"><div #20 id="20" [class.winningSquare]="currentStatus.estadoDoJogo && currentStatus.winningSquares[2][0]" (click)="squareClick($event)" class="mySquare" [class.myDisponivel]="estado && !disponivelParaStartarJogo && getSquareMarcado(2,0)"><fa #20a name="{{table[2][0]}}"></fa></div></div>
-  <div class="bz"><div #21 id="21" [class.winningSquare]="currentStatus.estadoDoJogo && currentStatus.winningSquares[2][1]" (click)="squareClick($event)" class="mySquare" [class.myDisponivel]="estado && !disponivelParaStartarJogo && getSquareMarcado(2,1)"><fa #21a name="{{table[2][1]}}"></fa></div></div>
-  <div class="cz"><div #22 id="22" [class.winningSquare]="currentStatus.estadoDoJogo && currentStatus.winningSquares[2][2]" (click)="squareClick($event)" class="mySquare" [class.myDisponivel]="estado && !disponivelParaStartarJogo && getSquareMarcado(2,2)"><fa #22a name="{{table[2][2]}}"></fa></div></div>
+  <div class="ax">
+    <div #00 id="00" 
+    [class.winningSquare]="currentStatus.estadoDoJogo && currentStatus.winningSquares[0][0]" 
+    (click)="squareClick($event)" class="mySquare" 
+    [class.myDisponivel]="estado && !disponivelParaStartarJogo && getSquareMarcado(0,0)">
+      <fa #00a name="{{table[0][0]}}" class="{{table[0][0]}}">
+      </fa>
+    </div>
+  </div>
+  <div class="bx">
+    <div #01 id="01" 
+    [class.winningSquare]="currentStatus.estadoDoJogo && currentStatus.winningSquares[0][1]" 
+    (click)="squareClick($event)" class="mySquare" 
+    [class.myDisponivel]="estado && !disponivelParaStartarJogo && getSquareMarcado(0,1)">
+      <fa #01a name="{{table[0][1]}}" class="{{table[0][1]}}">
+      </fa>
+    </div>
+  </div>
+  <div class="cx">
+    <div #02 id="02" 
+    [class.winningSquare]="currentStatus.estadoDoJogo && currentStatus.winningSquares[0][2]" 
+    (click)="squareClick($event)" class="mySquare" 
+    [class.myDisponivel]="estado && !disponivelParaStartarJogo && getSquareMarcado(0,2)">
+      <fa #02a name="{{table[0][2]}}" class="{{table[0][2]}}">
+      </fa>
+    </div>
+  </div>
+  <div class="ay">
+    <div #10 id="10" 
+    [class.winningSquare]="currentStatus.estadoDoJogo && currentStatus.winningSquares[1][0]" 
+    (click)="squareClick($event)" class="mySquare" 
+    [class.myDisponivel]="estado && !disponivelParaStartarJogo && getSquareMarcado(1,0)">
+      <fa #10a name="{{table[1][0]}}" class="{{table[1][0]}}">
+      </fa>
+    </div>
+  </div>
+  <div class="by">
+    <div #11 id="11"
+    [class.winningSquare]="currentStatus.estadoDoJogo && currentStatus.winningSquares[1][1]" 
+    (click)="squareClick($event)" class="mySquare" 
+    [class.myDisponivel]="estado && !disponivelParaStartarJogo && getSquareMarcado(1,1)">
+      <fa #11a name="{{table[1][1]}}"  class="{{table[1][1]}}">
+      </fa>
+    </div>
+  </div>
+  <div class="cy">
+    <div #12 id="12" 
+    [class.winningSquare]="currentStatus.estadoDoJogo && currentStatus.winningSquares[1][2]" 
+    (click)="squareClick($event)" class="mySquare" 
+    [class.myDisponivel]="estado && !disponivelParaStartarJogo && getSquareMarcado(1,2)">
+      <fa #12a name="{{table[1][2]}}" class="{{table[1][2]}}">
+      </fa>
+    </div>
+  </div>
+  <div class="az">
+    <div #20 id="20" 
+    [class.winningSquare]="currentStatus.estadoDoJogo && currentStatus.winningSquares[2][0]" 
+    (click)="squareClick($event)" class="mySquare" 
+    [class.myDisponivel]="estado && !disponivelParaStartarJogo && getSquareMarcado(2,0)">
+      <fa #20a name="{{table[2][0]}}" class="{{table[2][0]}}">
+      </fa>
+    </div>
+  </div>
+  <div class="bz">
+    <div #21 id="21" 
+    [class.winningSquare]="currentStatus.estadoDoJogo && currentStatus.winningSquares[2][1]" 
+    (click)="squareClick($event)" class="mySquare" 
+    [class.myDisponivel]="estado && !disponivelParaStartarJogo && getSquareMarcado(2,1)">
+      <fa #21a name="{{table[2][1]}}" class="{{table[2][1]}}">
+      </fa>
+    </div>
+  </div>
+  <div class="cz">
+    <div #22 id="22" 
+    [class.winningSquare]="currentStatus.estadoDoJogo && currentStatus.winningSquares[2][2]" 
+    (click)="squareClick($event)" class="mySquare" 
+    [class.myDisponivel]="estado && !disponivelParaStartarJogo && getSquareMarcado(2,2)">
+      <fa #22a name="{{table[2][2]}}" class="{{table[2][2]}}">
+      </fa>
+    </div>
+  </div>
 </div>

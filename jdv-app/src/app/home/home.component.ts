@@ -1,9 +1,10 @@
+import { TipoDificuldade } from './../TipoDificuldade';
+import { GetIdService } from './../services/get-id.service';
 import { JogoOnlineService } from './../services/jogo-online.service';
 import { GameGeneralService } from './../services/game-general.service';
 import { GameStatus } from './../game/gameStatus';
 import { JogoOfflineService } from './../services/jogo-offline.service';
 import { Component, OnInit } from '@angular/core';
-import { GetIdService } from '../services/get-id.service';
 
 
 @Component({
@@ -19,6 +20,7 @@ export class HomeComponent implements OnInit {
   textoJogo = " Jogo em Andamento"
   TextoMenuHeader = this.textoInicial;
   JogoZerado = false;
+  dificuldadeSelecionada: TipoDificuldade = 0;
 
   menuJogarComAmigo = false;
 
@@ -49,7 +51,7 @@ export class HomeComponent implements OnInit {
       this.offline.destroiJogo(this.CurrentStatus.playerId).subscribe(() => {
         console.log("zerei");
         this.idService.currentId.subscribe((id: string) => {
-          this.offline.iniciaJogo(id).subscribe( (a : GameStatus) => {
+          this.offline.iniciaJogo(id, this.dificuldadeSelecionada).subscribe( (a : GameStatus) => {
     
             console.log(a);
             this.game.changeStatus(a);
@@ -67,7 +69,7 @@ export class HomeComponent implements OnInit {
   
     }else{
       this.idService.currentId.subscribe((id: string) => {
-        this.offline.iniciaJogo(id).subscribe( (a : GameStatus) => {
+        this.offline.iniciaJogo(id, this.dificuldadeSelecionada).subscribe( (a : GameStatus) => {
   
           console.log(a);
           this.game.changeStatus(a);
@@ -91,22 +93,20 @@ export class HomeComponent implements OnInit {
     this.TextoMenuHeader = this.textoInicial;
   }
 
-  generateMessages(){
-
-    
-    switch(this.CurrentStatus.tipo){
+  generateMessages() {
+    switch(this.CurrentStatus.tipo) {
       case "1" : {break;}
       case "4" : {this.MenuMessages.tipoMessage = "Jogando contra o Computador"}
     }
-    if(this.CurrentStatus.estadoDoJogo != 0){
+    if(this.CurrentStatus.estadoDoJogo != 0) {
       if(!this.JogoZerado){
         this.TextoMenuHeader = "Jogo Encerrado!"
 
-      if(this.CurrentStatus.estadoDoJogo == this.CurrentStatus.jogadorValue){
+      if(this.CurrentStatus.estadoDoJogo == this.CurrentStatus.jogadorValue) {
         this.MenuMessages.seuTurnoMessage = "Você Venceu!!"
       } 
 
-      if(this.CurrentStatus.estadoDoJogo == this.CurrentStatus.serverValue){
+      if(this.CurrentStatus.estadoDoJogo == this.CurrentStatus.serverValue) {
         this.MenuMessages.seuTurnoMessage = "Você Perdeu :( "
       } 
       if(this.CurrentStatus.estadoDoJogo == -99){
@@ -120,7 +120,7 @@ export class HomeComponent implements OnInit {
 
     }
 
-    else{
+    else {
       if (this.CurrentStatus.jogadorTurno) {
         this.MenuMessages.seuTurnoMessage = "É sua vez de jogar!"
       } else {
@@ -132,7 +132,7 @@ export class HomeComponent implements OnInit {
 
   }
   
-  getFaName(){
+  getFaName() {
     if(this.CurrentStatus.jogadorValue == 1){
       return 'times';
     }
@@ -141,11 +141,10 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  buscaPorId(id: string){
-    return;
+  buscaPorId(id: string) {
 
     this.idService.currentId.subscribe((meuId) => {
-      this.online.buscaPorId(meuId, id).subscribe(res => {
+      this.idService.buscaPorId(meuId, id).subscribe(res => {
         if(res){
           console.log('ye');
         }
@@ -155,6 +154,10 @@ export class HomeComponent implements OnInit {
       })
     })
 
+  }
+
+  get labelBotaoJogar() {
+    return this.estadoMenu ? 'Jogar Novamente' : 'Iniciar Jogo';
   }
 
 }

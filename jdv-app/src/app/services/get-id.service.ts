@@ -17,11 +17,15 @@ export class GetIdService {
   //get an id from the server
   getId(){
     let session = this.TokenGenerator();
-    return this.http.post('http://localhost:8080/jdv/api/geraId', { id: "-1", session : session });
+    return this.http.post('http://localhost:8080/jdv/api/id/geraId', { id: "-1", session : session });
   }
 
   changeId(id: string){
     this.source.next(id);
+  }
+
+  buscaPorId(seuId: string, oponenteId: string){
+    return this.http.get('http://localhost:8080/jdv/api/id/search/'+oponenteId+'/'+seuId);
   }
 
   private TokenGenerator(){

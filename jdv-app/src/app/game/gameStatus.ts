@@ -8,4 +8,5 @@ export interface GameStatus {
     winningSquares: any[];
     playerId: string,
     tipo : string,
+    dificuldade: number
 }

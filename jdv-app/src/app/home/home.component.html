@@ -1,0 +1,41 @@
+<div class="myMenu">
+  <div class="myMenuHeader">{{TextoMenuHeader}}</div>
+  <div *ngIf="estadoMenu == 0 || estadoMenu == 10">
+    <div *ngIf="estadoMenu == 10">
+      <ul class="list-unstyled menu4">
+        <li>
+          {{MenuMessages.seuTurnoMessage}}
+        </li>
+      </ul>
+    </div>
+    <div class="myButtonList">
+      <div class="select">
+        <div>
+          <p>Dificuldade</p>
+        </div>
+        <select id="select" name="dificuldade" [(ngModel)]="dificuldadeSelecionada">
+          <option value="0" selected>Fácil</option>
+          <option value="1">Médio</option>
+          <option value="2">Difícil</option>
+        </select>
+      </div>
+      <div>
+        <button (click)="iniciaJogoOffline()" type="button" class="btn btn-lg btn-block">{{labelBotaoJogar}}</button>
+      </div>                                    
+    </div>
+  </div>
+  <div *ngIf="estadoMenu == 4">
+    <ul class="list-unstyled menu4">
+      <li>
+        {{MenuMessages.tipoMessage}}
+      </li>
+      <li>
+        {{MenuMessages.seuSimboloMessage}}
+        <fa [name]="getFaName()"></fa>
+      </li>
+      <li>
+        {{MenuMessages.seuTurnoMessage}}
+      </li>
+    </ul>
+  </div>    
+</div>

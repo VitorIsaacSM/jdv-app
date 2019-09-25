@@ -1,0 +1,7 @@
+body{
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(150,141,191,1) 0%, rgba(114,104,182,0.84) 52%, rgba(81,71,173,0.84) 99%, rgba(81,71,173,0.84) 100%);
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(150,141,191,1) 0%,rgba(114,104,182,0.84) 52%,rgba(81,71,173,0.84) 99%,rgba(81,71,173,0.84) 100%);
+    background: radial-gradient(ellipse at center,  rgba(150,141,191,1) 0%,rgba(114,104,182,0.84) 52%,rgba(81,71,173,0.84) 99%,rgba(81,71,173,0.84) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#968dbf', endColorstr='#d65147ad',GradientType=1 );
+    font-size: 50px;
+}

@@ -1,0 +1,1 @@
+export const URL_SERVER = 'https://jdv-app.herokuapp.com/jdv/api';

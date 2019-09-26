@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
+import { URL_SERVER } from '../app-settings';
 
 
 @Injectable({
@@ -17,7 +18,7 @@ export class GetIdService {
   //get an id from the server
   getId(){
     let session = this.TokenGenerator();
-    return this.http.post('http://localhost:8080/jdv/api/id/geraId', { id: "-1", session : session });
+    return this.http.post(URL_SERVER + '/id/geraId', { id: "-1", session : session });
   }
 
   changeId(id: string){
@@ -25,7 +26,7 @@ export class GetIdService {
   }
 
   buscaPorId(seuId: string, oponenteId: string){
-    return this.http.get('http://localhost:8080/jdv/api/id/search/'+oponenteId+'/'+seuId);
+    return this.http.get(URL_SERVER + '/id/search/'+oponenteId+'/'+seuId);
   }
 
   private TokenGenerator(){

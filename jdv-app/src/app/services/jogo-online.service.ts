@@ -3,6 +3,8 @@ import { GetIdService } from './get-id.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { GameStatus } from '../game/gameStatus';
+import { URL_SERVER } from '../app-settings';
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,10 +18,10 @@ export class JogoOnlineService {
 
   realizaJogada(id:string, x:string, y:string){
     console.log(id);
-    return this.http.post('http://localhost:8080/jdv/api/online/'+id, {x : x, y : y});
+    return this.http.post( URL_SERVER + '/online/'+id, {x : x, y : y});
   }
 
   destroiJogo(id: string){
-    return this.http.post('http://localhost:8080/jdv/api/online/delete/'+id, {});
+    return this.http.post(URL_SERVER +  '/online/delete/'+id, {});
   }
 }

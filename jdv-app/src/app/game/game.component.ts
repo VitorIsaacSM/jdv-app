@@ -66,7 +66,7 @@ export class GameComponent implements OnInit, ComponentCanDeactivate {
     if(this.estado == false || this.currentStatus.estadoDoJogo != 0 || !this.currentStatus.jogadorTurno){
       return;
     }
-    this.updateGame();
+    this.currentStatus.jogadorTurno = !this.currentStatus.jogadorTurno;
     let SquareId : string = event.target.id;
     console.log(event.target.id);
     this.aplicaJodada(SquareId.charAt(0),SquareId.charAt(1));
